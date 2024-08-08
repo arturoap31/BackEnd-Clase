@@ -56,6 +56,9 @@ const main = async () => {
                 // DESPIDO ARBITRARIO
                 flowDespidoArbitrario,
                 flowAgendarConsulta,
+                // DEFENSA LEGAL
+                flowDefensaLegal,
+                flowAgendarConsulta1,
         ])
 
         const adapterProvider = createProvider(BaileysProvider, { name: BOTNAME })
