@@ -1,0 +1,34 @@
+CLASE 07-08-2024
+
+git clases 
+repositorio de prueba clase 01
+
+https://github.com/arturoap31/Backendclase01.git
+
+repositorio para subir archivos para la clase
+
+https://github.com/arturoap31/BackEnd-Clase.git
+
+------------------------------------------------------
+
+git inint -> para iniciar un nuevo proyecto.
+
+
+---configurar el acceso a git
+git config user.name "arturoap31" -> USUARIO DEL GIT
+gif config user.email "arturoapbarrios@hotmail.com" ->  CORREO DEL GIT
+git remote add origin "https://github.com/arturoap31/BackEnd-Clase.git" -> URL DEL REPOSITORIO EN GIT
+
+---consultar status del repositorio
+git status -> muestra el estado del repositorio y sus archivos
+
+---cargar archivos al repositorio remoto
+git add app.js -> precargar el archivo para subirlo al repositorio
+git commit -m "Primer archivo cargado" -> MENSAJE A MOSTRAR AL MOMENTO DE CARGAR EL ARCHIVO
+git push -u origin master -> CARGAMOS EL ARCHIVO AL REPOSITORIO REMOTO andrerami0330@gmail.com
+
+
+
+
+
+
