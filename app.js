@@ -12,7 +12,8 @@ dotenv.config({ path: './.env' })
 const bd = require('./3. Bd/bd.js')
 const { phoneBlackList } = require('./3. Bd/save.js')
 
-
+const { flowInactividad, startInactividad, resetInactividad, stopInactividad
+} = require('./timeoff.js');
 
 //CONEXION A FLOW
 //Inicio
@@ -37,7 +38,7 @@ const main = async () => {
 
         const BOTNAME = 'AsesoriaBot'
         const phoneBlackListResult = await phoneBlackList()
-        console.log(phoneBlackListResult)
+        //console.log(phoneBlackListResult)
 
 
         const adapterDB = new MockAdapter()
@@ -59,6 +60,8 @@ const main = async () => {
                 // DEFENSA LEGAL
                 flowDefensaLegal,
                 flowAgendarConsulta1,
+                // TIMER OFF PARA FLUJO
+                flowInactividad,
         ])
 
         const adapterProvider = createProvider(BaileysProvider, { name: BOTNAME })
@@ -68,12 +71,7 @@ const main = async () => {
                 provider: adapterProvider,
                 database: adapterDB,
         }, {
-                blackList: phoneBlackList /*['51926979141', '51926579334', '51941913682', '51951974922', '51945478396', '51978556763', '51978128448',
-                        '51987825449', '51992022336', '51903463635', '51926579334', '51993976074', '51935151446', '51933768341',
-                        '51995744801', '51992387031', '51961675975', '51977113408', '51986449570', '51997591041', '51986065673',
-                        '51939499998', '51997062642', '51986613563', '51908835285', '51957827659', '51961675975', '51981530505',
-                        '51966593494', '51939321420', '51900564384', '51966547719', '51932500744', '51933429003', '51993546153',
-                        '51987247407', '51918859776', '51907284394']*/
+                blackList: phoneBlackList 
         })
 
         QRPortalWeb({ name: BOTNAME, port: 4085 })
